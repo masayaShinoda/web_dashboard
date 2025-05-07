@@ -136,3 +136,8 @@ GitHub.sublime-settings
 !.vscode/launch.json
 !.vscode/extensions.json
 .history
+
+# PyCharm
+.idea/*
+.idea/web_dashboard.iml
+.idea/misc.xml

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>System Stats</title>
+<script defer src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 30%;
+        }
+        th, td {
+            border: 1px solid #999;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>System Statistics</h1>
+
+    <div
+        id="stats-container"
+        hx-get="{% url 'system_stats_partial' %}"
+        hx-trigger="load, every 3s"
+        hx-swap="innerHTML"
+    >
+        {% include "dashboard/system_stats_table.html" %}
+    </div>
+
+</body>
+</html>
